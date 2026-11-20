@@ -1,4 +1,3 @@
-
 # LeadDesk Mini
 
 A full-stack lead management application that helps businesses collect, track, and manage customer enquiries through an admin dashboard.
@@ -18,7 +17,7 @@ A full-stack lead management application that helps businesses collect, track, a
 
 ## Tech Stack
 
-**Frontend**
+### Frontend
 - React
 - Vite
 - Tailwind CSS
@@ -26,7 +25,7 @@ A full-stack lead management application that helps businesses collect, track, a
 - React Router
 - Lucide React
 
-**Backend**
+### Backend
 - Node.js
 - Express.js
 - MongoDB
@@ -34,72 +33,41 @@ A full-stack lead management application that helps businesses collect, track, a
 - JWT Authentication
 - bcryptjs
 
-## Project Structure
-
-```text
-LeadDesk-Mini/
-├── client/
-│   └── src/
-├── server/
-│   ├── config/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   ├── utils/
-│   ├── .env.example
-│   ├── createAdmin.js
-│   └── server.js
-└── README.md
-```
-
 ## Installation and Setup
 
-### 1. Clone the repository
+### 1. Clone Repository
 
-```bash
-git clone https://github.com/ARADHANA695/LeadDesk-Mini.git
-cd LeadDesk-Mini
-```
+    git clone https://github.com/ARADHANA695/LeadDesk-Mini.git
+    cd LeadDesk-Mini
 
 ### 2. Backend Setup
 
-```bash
-cd server
-npm install
-```
+    cd server
+    npm install
 
-Create a `.env` file in the server folder:
+Create a `.env` file inside the server folder:
 
-```env
-PORT=8000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
-```
+    PORT=8000
+    MONGO_URI=your_mongodb_connection_string
+    JWT_SECRET=your_secret_key
 
 Create the admin account:
 
-```bash
-node createAdmin.js
-```
+    node createAdmin.js
 
 Start the backend:
 
-```bash
-npm run dev
-```
+    npm run dev
 
-The backend runs at `http://localhost:8000`.
+Backend runs at `http://localhost:8000`.
 
 ### 3. Frontend Setup
 
 Open another terminal:
 
-```bash
-cd client
-npm install
-npm run dev
-```
+    cd client
+    npm install
+    npm run dev
 
 Open the local URL displayed by Vite, usually `http://localhost:5173`.
 
@@ -110,7 +78,7 @@ Default local test credentials:
 - Email: `admin@leaddesk.com`
 - Password: `admin123`
 
-Change the default password before using the application in production.
+Change the default password before production use.
 
 ## Environment Variables
 
