@@ -6,14 +6,35 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  min-width: 320px;
+}
+
 body {
+  min-width: 320px;
+  min-height: 100vh;
   background-color: #f8fafc;
-  font-family: Inter, sans-serif;
+  font-family: Inter, Arial, sans-serif;
   color: #1e293b;
 }
 
-html,
-body,
 #root {
-  min-height: 100%;
+  min-height: 100vh;
+  width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+#contact {
+  scroll-margin-top: 90px;
 }

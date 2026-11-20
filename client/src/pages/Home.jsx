@@ -1,15 +1,19 @@
 import Navbar from "../components/landing/Navbar";
 import Hero from "../components/landing/Hero";
-import Features from "../components/landing/Features";
 import LeadForm from "../components/landing/LeadForm";
+import Footer from "../components/landing/Footer";
 
 const Home = () => {
   return (
     <>
       <Navbar />
-      <Hero />
-      <Features />
-      <LeadForm />
+
+      <main>
+        <Hero />
+        <LeadForm />
+      </main>
+
+      <Footer />
     </>
   );
 };

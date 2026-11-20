@@ -1,4 +1,18 @@
+# Dependencies
 node_modules/
+
+# Environment variables
 .env
+.env.*
+
+# Build files
 dist/
-.DS_Stores
+
+# macOS files
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+
+!.env.example

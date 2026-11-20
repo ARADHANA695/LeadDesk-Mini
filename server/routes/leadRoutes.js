@@ -5,19 +5,17 @@ const {
   createLead,
   getLeads,
   updateLeadStatus,
-  deleteLead
+  deleteLead,
 } = require("../controllers/leadController");
 
-// Create Lead
+const authMiddleware = require("../middleware/authMiddleware");
+
+// Public route – customers can submit enquiries
 router.post("/", createLead);
 
-// Get All Leads
-router.get("/", getLeads);
-
-// Update Lead Status
-router.put("/:id", updateLeadStatus);
-
-// Delete Lead
-router.delete("/:id", deleteLead);
+// Protected routes – admin must be logged in
+router.get("/", authMiddleware, getLeads);
+router.put("/:id", authMiddleware, updateLeadStatus);
+router.delete("/:id", authMiddleware, deleteLead);
 
 module.exports = router;

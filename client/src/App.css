@@ -1,184 +1,338 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
+/* ========================================
+   LEADDESK MINI - GLOBAL APP STYLES
+======================================== */
 
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
+:root {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  color: #0f172a;
+  background: #f8fafc;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --border: #e2e8f0;
+  --page-background: #f8fafc;
 }
 
-.hero {
-  position: relative;
+/* ========================================
+   RESET AND BASE LAYOUT
+======================================== */
 
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
+* {
+  box-sizing: border-box;
 }
 
-#center {
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--page-background);
+  color: var(--text-primary);
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ========================================
+   MAIN PAGE
+======================================== */
+
+main {
+  width: 100%;
+}
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+}
+
+nav {
+  width: 100%;
+}
+
+/* ========================================
+   HERO SECTION
+======================================== */
+
+#home {
+  scroll-margin-top: 80px;
+}
+
+.hero-section {
   display: flex;
-  flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
+  min-height: 350px;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+  text-align: center;
+  background: #eff6ff;
+}
 
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
+.hero-section h1 {
+  margin-bottom: 16px;
+  color: var(--text-primary);
+  font-size: clamp(30px, 5vw, 48px);
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.hero-section p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.hero-section button {
+  margin-top: 24px;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  background: var(--primary);
+  color: #ffffff;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.hero-section button:hover {
+  background: var(--primary-hover);
+}
+
+
+
+/* ========================================
+   CONTACT FORM
+======================================== */
+
+#contact {
+  width: 100%;
+  padding: 65px 24px;
+  scroll-margin-top: 85px;
+  background: #f8fafc;
+}
+
+#contact > div {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+#contact h2 {
+  color: #0f172a;
+  line-height: 1.25;
+}
+
+#contact form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  width: 100%;
+}
+
+/* Form card */
+#contact > div > div:last-child {
+  width: 100%;
+  padding: 32px;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
+}
+
+/* Labels */
+#contact label {
+  display: block;
+  margin-bottom: 9px;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Inputs */
+#contact input,
+#contact select,
+#contact textarea {
+  display: block;
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+#contact input:focus,
+#contact select:focus,
+#contact textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+#contact input::placeholder {
+  color: #94a3b8;
+}
+
+/* Full-width elements */
+#contact [role="status"],
+#contact [role="alert"],
+#contact button[type="submit"],
+#contact form > p {
+  grid-column: 1 / -1;
+}
+
+/* Submit button */
+#contact button[type="submit"] {
+  width: 100%;
+  min-height: 48px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+#contact button[type="submit"]:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+/* Success and error messages */
+#contact [role="status"],
+#contact [role="alert"] {
+  padding: 12px 15px;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #contact {
+    padding: 45px 16px;
+  }
+
+  #contact > div > div:last-child {
+    padding: 20px;
+  }
+
+  #contact form {
+    grid-template-columns: 1fr;
     gap: 18px;
   }
-}
 
-#next-steps {
-  display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
-
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
+  #contact h2 {
+    font-size: 28px;
   }
 }
 
-#docs {
-  border-right: 1px solid var(--border);
+/* ========================================
+   FOOTER
+======================================== */
 
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-}
-
-#next-steps ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 8px;
-  margin: 32px 0 0;
-
-  .logo {
-    height: 18px;
-  }
-
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
-}
-
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
-}
-
-.ticks {
-  position: relative;
+footer {
   width: 100%;
+  border-top: 1px solid var(--border);
+  background: #ffffff;
+  color: var(--text-secondary);
+  text-align: center;
+}
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
+footer p {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 320px;
+    padding: 56px 20px;
   }
 
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
+  .hero-section p {
+    font-size: 15px;
   }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
+
+  #contact {
+    padding: 48px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: 300px;
+    padding: 44px 18px;
+  }
+
+  .hero-section h1 {
+    font-size: 30px;
+  }
+
+  .hero-section p {
+    font-size: 14px;
+  }
+
+  #contact {
+    padding: 36px 14px;
+  }
+
+  #contact h2 {
+    font-size: 28px;
   }
 }

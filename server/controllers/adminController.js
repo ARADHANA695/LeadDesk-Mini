@@ -8,14 +8,8 @@ const loginAdmin = async (req, res) => {
     const { email, password } = req.body;
 
     // Debug Logs
-    console.log("Email Entered:", email);
-    console.log("Password Entered:", password);
-
     const admin = await Admin.findOne({ email });
-
-    console.log("Admin Found:", admin);
-
-    if (!admin) {
+     if (!admin) {
       return res.status(400).json({
         success: false,
         message: "Invalid credentials",
@@ -23,9 +17,6 @@ const loginAdmin = async (req, res) => {
     }
 
     const match = await bcrypt.compare(password, admin.password);
-
-    console.log("Password Match:", match);
-
     if (!match) {
       return res.status(400).json({
         success: false,
@@ -40,16 +31,13 @@ const loginAdmin = async (req, res) => {
         expiresIn: "1d",
       }
     );
-
-    console.log("✅ Login Successful");
-
     res.json({
       success: true,
       token,
     });
 
   } catch (error) {
-    console.log("Error:", error);
+    console.error("Admin Login Error:", error.message);
 
     res.status(500).json({
       success: false,
